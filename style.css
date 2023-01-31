@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,600&display=swap');
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("bg.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    background-color: #000000;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 350px;
+    height: 450px;
+    background: linear-gradient(0deg, transparent, #ff0000, #ff0000);
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 350px;
+    height: 450px;
+    background: linear-gradient(0deg, transparent, #ff0000, #ff0000);
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: absolute;
+    background-color: #1F5547;
+    inset: 10px;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 60px;
+}
+
+.form h1 {
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.inputLine {
+    position: relative;
+    width: 250px;
+    margin-top: 25px;
+}
+
+.inputLine input {
+    position: relative;
+    width: 100%;
+    padding: 10px 5px 5px;
+    color: #000000;
+    background: transparent;
+    border: 0;
+    letter-spacing: 0.08em;
+    outline: none;
+    z-index: 10;
+    font-size: 1em;
+}
+
+.inputLine span {
+    position: absolute;
+    padding: 10px 0px 5px;
+    font-size: 1em;
+    color: #000000;
+    left: 0;
+    transition: 0.8s;
+    pointer-events: none;
+    letter-spacing: 0.08em;
+}
+
+.inputLine input:valid ~ span,
+.inputLine input:focus ~ span {
+    color: #ff0000;
+    transform: translateX(0px) translateY(-28px);
+    font-size: 0.9em;
+}
+
+.inputLine i {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    z-index: 3;
+    background-color: #ff0000;
+    pointer-events: none;
+    transition: 0.8s;
+    border-radius: 60px;
+}
+
+.inputLine input:valid ~ i,
+.inputLine input:focus ~ i {
+    height: 32px;
+} 
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 20px 0px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #000000;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    margin: 21px 0px;
+    cursor: pointer;
+}
+
+.links a:hover,
+.links a:nth-child(0) {
+    color: #ff0000;
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    background: #000000;
+    padding: 5px 10px;
+    border-radius: 60px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ff0000;
+}
